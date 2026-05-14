@@ -4,32 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Việt Nam - Hành Trình Huyền Thoại</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 1. HIỆU ỨNG CHUYỂN SLIDE */
+        html {
+            scroll-snap-type: y mandatory; /* Tự động hút slide khi cuộn */
+            scroll-behavior: smooth;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #000;
+            overflow-x: hidden;
+        }
+
+        /* Định dạng chung cho mỗi Slide */
+        section {
+            width: 100vw;
+            height: 100vh;
+            scroll-snap-align: start; /* Điểm dừng của slide */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 2. THANH MENU (ẢNH) */
+        .navbar-img {
+            position: fixed; /* Luôn nằm ở trên cùng */
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%; /* Hoặc chỉnh theo kích thước ảnh của bạn */
+            max-width: 1200px; 
+            z-index: 1000;
+            padding: 10px;
+        }
+
+        /* 3. ẢNH TIÊU ĐỀ CHÍNH GIỮA */
+        .main-title-img {
+            width: 80%; /* Chỉnh to nhỏ ảnh tiêu đề tại đây */
+            max-width: 800px;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+            transition: transform 0.5s;
+        }
+
+        /* Slide 1: Dùng ảnh nền của bạn */
+        #slide1 {
+            background-image: url('background.jpg'); 
+        }
+
+        /* Slide 2: Ví dụ slide tiếp theo */
+        #slide2 {
+            background-image: url('background2.jpg');
+            background-color: #1a1a1a;
+        }
+
+        /* Nút cuộn xuống (tùy chọn) */
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            color: white;
+            font-family: sans-serif;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">VNW</div>
-        <ul class="nav-links">
-            <li><a href="#">Khám phá</a></li>
-            <li><a href="#">Cách chơi</a></li>
-            <li><a href="#">Tin tức & Sự kiện</a></li>
-            <li><a href="#">Tham gia</a></li>
-            <li><a href="#">Hợp tác</a></li>
-        </ul>
-    </nav>
+    <img src="menu.png" class="navbar-img" alt="Navbar">
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="main-title-box">
-                <p class="sub-text">✧ KHÁM PHÁ ✧ VĂN HÓA ✧ HUYỀN THOẠI ✧</p>
-                <h1>VIỆT NAM</h1>
-                <h3>HÀNH TRÌNH HUYỀN THOẠI</h3>
-            </div>
-            
-            <a href="#" class="btn-start">NHẤN ĐỂ BẮT ĐẦU</a>
-        </div>
+    <section id="slide1">
+        <img src="tieude.png" class="main-title-img" alt="Việt Nam Hành Trình Huyền Thoại">
+        
+        <div class="scroll-hint">Cuộn xuống để khám phá ↓</div>
+    </section>
+
+    <section id="slide2">
+        <h1 style="color: gold; font-size: 50px; font-family: 'Times New Roman';">NỘI DUNG TIẾP THEO</h1>
     </section>
 
 </body>
-</html> 
+</html>
