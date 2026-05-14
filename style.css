@@ -1,0 +1,102 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Nền tảng cho trang */
+body {
+    background-color: #000;
+}
+
+/* Cấu trúc thanh Menu */
+.navbar {
+    background: linear-gradient(to bottom, #a50000, #7b0000); /* Màu đỏ tối */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #ffd700; /* Đường viền vàng */
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Phần Banner Hình Ảnh */
+.hero {
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Khối nội dung chính giữa ảnh */
+.hero-content {
+    text-align: center;
+    color: #fff;
+}
+
+.main-title-box {
+    background: rgba(0, 0, 0, 0.4); /* Làm mờ nhẹ nền chữ để dễ đọc */
+    padding: 30px 60px;
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.main-title-box h1 {
+    font-size: 80px;
+    color: #ffd700; /* Màu vàng kim loại */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    letter-spacing: 5px;
+}
+
+.main-title-box h3 {
+    font-size: 24px;
+    color: #fff;
+    background: #4a3419; /* Nền nâu như trong ảnh */
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.sub-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Nút bấm */
+.btn-start {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #2b1e10;
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #ffd700;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-start:hover {
+    background: #ffd700;
+    color: #000;
+}
